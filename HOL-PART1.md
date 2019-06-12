@@ -13,10 +13,10 @@ Spring Boot 마이크로 서비스를 Spring Boot Admin을 사용하여 Metrics 
 ### Spring Admin Server (Spring Boot 프로젝트) 생성 및 구성
 제공된 Eclipse Spring Tool Suite(이하 STS) 프로젝트중에서 spring-admin-server가 Spring Boot Admin (모니터링 서버) 역할을 합니다. 
 
-제공되는 프로젝트를 활용해도 되지만, 새로 만들어볼 수 있습니다. 새로 프로젝트를 생성해서 Spring Boot Admin을 구성할 경우 아래 **Spring Boot Admin 서버 생성**을 클릭해서 가이드데로 진행합니다.
+제공되는 프로젝트를 활용해도 되지만, 새로 만들어볼 수 있습니다. 새로 프로젝트를 생성해서 Spring Boot Admin을 구성할 경우 아래 **Spring Boot Admin 서버 만들기**을 클릭해서 가이드데로 진행합니다.
 
 <details>
-<summary>Spring Boot Admin 서버 생성</summary>
+<summary>Spring Boot Admin 서버 만들기</summary>
 <div markdown="1">
 1. STS에서 File > New > Spring Starter Project를 선택 (안보일 경우 Other 클릭 후 검색)
 <img src="images/sts-create-spring-starter-project.png" width="80%">
