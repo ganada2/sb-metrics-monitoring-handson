@@ -178,6 +178,4 @@ Love Calculator와 Yes or No라는 Open API를 각각 호출하는 두개의 Spr
 
 - [실습2: Microservice Monitoring with Service Discovery (Eureka) and Spring Boot Admin](HOL-PART2.md)
 
-- [실습3: Microservice Monitoring with Prometheus and Grafana](HOL-PART3.md)
-
-- [실습4: Microservice Monitoring with Service Discovery (Consul) and Prometheus, Grafana](HOL-PART4.md)
+- [실습3: Microservice Monitoring with Service Discovery (Consul) and Prometheus, Grafana](HOL-PART3.md)

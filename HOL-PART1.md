@@ -271,7 +271,7 @@ spring.boot.admin.client.password=admin
     ./start_all_svc.sh
     ```
 
-### 모니터링 화면 확인
+### Spring Boot Admin 모니터링 대시보드 확인
 브라우저에서 http://localhost:8090 로 접속 후 (id/pw: admin/admin)
 
 <img src="images/sba-home-1.png" width="100%">
@@ -282,6 +282,20 @@ spring.boot.admin.client.password=admin
 
 <img src="images/sba-jvm-threads-1.png" width="100%">
 
+### 모든 서비스 중지
+다음 실습을 위해서 모든 서비스를 중지합니다.
+
+* **Windows**
+    Spring Boot Admin은 ***'Ctrl + c'***로 중지하고, Love Calculator의 경우는 서비스를 시작한 커맨드창을 닫으면 모두 중지됩니다.
+
+* **macOS** 
+    마찬가지로 Spring Boot Admin은 ***'Ctrl + c'***로 중지하고, Love Calculator 서비스는 다음 스크립트로 모두 중지합니다.
+
+    ```
+    cd {ROOT}\sts_workspace
+
+    ./stop_all_svc.sh
+    ```
 
 ***
 

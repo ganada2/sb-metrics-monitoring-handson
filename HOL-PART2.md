@@ -117,7 +117,7 @@ spring-admin-server와 마찬가지로 제공되는 프로젝트를 활용해도
     eureka.client.fetch-registry=false
     ```
 
-6. Spring Boot Admin Server를 시작합니다. Windows Command 또는 Terminal을 열고 다음과 같이 실행합니다.
+6. Eureka Server를 시작합니다. Windows Command 또는 Terminal을 열고 다음과 같이 실행합니다.
 
     ```
     $ cd {ROOT}/sts_workspace/eureka-discovery-server-2
@@ -142,9 +142,11 @@ spring-admin-server와 마찬가지로 제공되는 프로젝트를 활용해도
 * **실습 2**
     * Love Calculator 서비스 -> Eureka (Discovery 서버) <- Spring Boot Admin (모니터링 서버)
 
-따라서 서비스와 Spring Boot Admin을 Eureka Client로 등록해서 연결해줘야 합니다.
+따라서 Spring Boot 서비스(Love Calculator)와 Spring Boot Admin을 Eureka Client로 등록해서 연결해줘야 합니다.
 
-1. STS Package Explorer에서 spring-admin-server/pom.xml을 열고 spring-cloud-starter-netflix-eureka-client Dependency를 추가합니다.
+> 직접 만들고 구성한 Spring Boot Admin과 Eureka 서버를 사용할 경우에는 작업을 해당 프로젝트에서 작업하여야 합니다.
+
+1. STS Package Explorer에서 spring-admin-server/pom.xml을 열고 spring-cloud-starter-netflix-eureka-client Dependency를 추가합니다. 
 
     ```xml
     ...
@@ -160,34 +162,179 @@ spring-admin-server와 마찬가지로 제공되는 프로젝트를 활용해도
 
 2. STS에서 Spring Boot Application 파일(spring-admin-server/src/main/java/com/example/demo/SpringAdminServerApplication.java)을 열고 다음과 같이 @EnableDiscoveryClient 을 추가합니다.
 
-```
-@SpringBootApplication
-@EnableAdminServer
-@EnableDiscoveryClient
-public class SpringAdminServerApplication {
+    ```
+    @SpringBootApplication
+    @EnableAdminServer
+    @EnableDiscoveryClient
+    public class SpringAdminServerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringAdminServerApplication.class, args);
-	}
+        public static void main(String[] args) {
+            SpringApplication.run(SpringAdminServerApplication.class, args);
+        }
 
-	@Configuration
-	public class SecurityConfig extends WebSecurityConfigurerAdapter {
-```
+        @Configuration
+        public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    ```
+
+3. STS에서 Spring Boot Properties(spring-admin-server/src/main/resources/application.properties) 파일에 다음과 같이 Eureka와 관련된 Property의 주석을 제거합니다.
+
+    ```properties
+    spring.application.name=Boot-Admin
+    server.port=8090
+
+    # Logging
+    logging.level.org.springframework=INFO
+    logging.file=./logs/spring-boot-logging.log
+
+    # spring security
+    spring.security.user.name=admin
+    spring.security.user.password=admin
+
+    # Ignore this sba at eureka
+    spring.boot.admin.discovery.ignored-services=boot-admin
+
+    # Eureka
+    eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
+    eureka.client.registry-fetch-interval-seconds=5
+    eureka.client.register-with-eureka=true
+    eureka.client.fetch-registry=true
+    eureka.instance.lease-renewal-interval-in-seconds=10
+    eureka.instance.metadata-map.startup=${random.int}
+    ```
+
+    > 각 Property에 대한 자세한 설명은 다음 블로그를 참조하세요.  
+    > https://mangdan.github.io/spring-boot-microservice-monitoring-2/
 
 
+### Love Calculator 서비스 수정
+Spring Boot Admin이 아닌 Eureka Server와 연결되도록 설정을 변경합니다.
 
+마찬가지로 3개 서비스(love-calculator-service, love-calculator-cconsumer, yes-or-no-consumer)에 대한 설정이 동일합니다. 여기서는 love-calculator-service를 예로 진행합니다. (3개 서비스 모두 적용)
 
+1. STS에서 love-calculator-service/pom.xml을 열고 spring-boot-admin-starter-client dependency를 다음과 같이 spring-cloud-starter-netflix-eureka-client로 변경합니다.
 
+    **변경 전**
+    ```xml
+    <dependency>
+        <groupId>de.codecentric</groupId>
+        <artifactId>spring-boot-admin-starter-client</artifactId>
+    </dependency>
+    ```
 
+    **변경 후**
+    ```xml
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+    </dependency>
+    ```
 
+2. STS에서 Spring Boot Application 파일(love-calculator-service/src/main/java/com/example/demo.LoveCalculatorServiceApplication.java)을 열고 다음과 같이 @EnableDiscoveryClient 어노테이션을 추가합니다.
 
+어노테이션을 추가하고 ***'Ctrl + Shift + o'***을 눌러서 관련 패키지를 임포트합니다.
 
+    ```java
+    @SpringBootApplication
+    @EnableDiscoveryClient
+    public class LoveCalculatorServiceApplication {
 
+        public static void main(String[] args) {
+            SpringApplication.run(LoveCalculatorServiceApplication.class, args);
+            
+            // for kill the app Process (강제로 서버 중지를 위해 pid 포함된 파일 생성)
+            SpringApplicationBuilder app = new SpringApplicationBuilder(LoveCalculatorServiceApplication.class)
+                    .web(WebApplicationType.NONE);
+            app.build().addListeners(new ApplicationPidFileWriter("./love-calculator-service/shutdown.pid"));
+            app.run();
+        }
+    }
+    ```
 
+3. STS에서 Spring Boot Properties(love-calculator-service/src/main/resources/application.properties) 파일에 다음과 같이 Spring Boot Admin 관련 Property는 주석 처리하고 Eureka와 관련된 부분은 주석을 제거합니다.
+
+    ```properties
+    spring.application.name=Love Calculator service
+    server.port=8081
+
+    # Logging
+    logging.level.org.springframework=INFO
+    logging.file=./logs/spring-boot-logging.log
+
+    # Actuator
+    management.endpoints.web.exposure.include=*
+
+    # Spring Boot Admin
+    #spring.boot.admin.client.url=http://localhost:8090
+    #spring.boot.admin.client.username=admin
+    #spring.boot.admin.client.password=admin
+
+    # Eureka
+    eureka.client.service-url.defaultZone: http://localhost:8761/eureka
+
+    # Consul
+    #spring.cloud.consul.host=localhost
+    #spring.cloud.consul.port=8500
+    ```
+
+4. 동일하게 나머지 두개의 서비스 (love-calculator-consumer, yes-or-no-consumer)도 동일하게 적용합니다.
+
+### 모든 서비스와 서버 시작 및 Spring Boot Admin 모니터링 대시보드 확인
+> 직접 만들고 구성한 Spring Boot Admin과 Eureka 서버를 사용할 경우에는 작업을 해당 프로젝트에서 작업하여야 합니다.
+
+* ***Eureka 서버 시작***
+    ```
+    $ cd {ROOT}/sts_workspace/eureka-discovery-server
+
+    $ mvn spring-boot:run
+    ```
+
+* ***Spring Admin 서버 시작***
+    ```
+    $ cd {ROOT}/sts_workspace/spring-admin-server
+
+    $ mvn spring-boot:run
+    ```
+
+* ***Love Calculator 서비스 시작***
+    
+    **Windows**
+    ```
+    $ cd {ROOT}/sts_workspace
+
+    $ start_all_svc.cmd
+    ```
+
+    **macOS**
+    ```
+    $ cd {ROOT}/sts_workspace
+
+    $ ./start_all_svc.sh
+    ```
+
+* ***Eureka 서버 대시보드***
+<img src="images/eureka-console.png" width="100%">
+
+* ***Spring Boot Admin 서버 대시보드***
+<img src="images/sba-home-2.png" width="100%">
+
+### 모든 서비스 중지
+다음 실습을 위해서 모든 서비스를 중지합니다.
+
+* **Windows**
+    Spring Boot Admin과 Eureka 서버는 ***'Ctrl + c'***로 중지하고, Love Calculator의 경우는 서비스를 시작한 커맨드창을 닫으면 모두 중지됩니다.
+
+* **macOS** 
+    마찬가지로 Spring Boot Admin과 Eureka 서버는 ***'Ctrl + c'***로 중지하고, Love Calculator 서비스는 다음 스크립트로 모두 중지합니다.
+
+    ```
+    cd {ROOT}\sts_workspace
+
+    ./stop_all_svc.sh
+    ```
 
 ***
 
-* [실습3: Microservice Monitoring with Prometheus and Grafana](HOL-PART3.md)
+* [실습3: Microservice Monitoring with Service Discovery(Consul) Prometheus and Grafana](HOL-PART3.md)
 
 * [첫 페이지로 가기](README.md)
 
@@ -195,4 +342,4 @@ public class SpringAdminServerApplication {
 
 ### 참고
 본 실습 관련 좀 더 상세한 내용은 아래 블로그 참고하세요.
-* https://mangdan.github.io/spring-boot-microservice-monitoring-1/
+* https://mangdan.github.io/spring-boot-microservice-monitoring-2/
