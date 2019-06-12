@@ -23,9 +23,7 @@ Spring Boot 마이크로 서비스에 대한 Metrics 모니터링 실습
 
 ### 설치 및 환경 구성
 #### Windows
-1. Windows 사용자의 경우는 Eclipse STS에 OpenJDK, Maven 구성 및 Project Import가 된 상태로 배포되기 때문에 STS에 추가적으로 설정할 부분은 없습니다.
-
-Windows 사용자의 경우는 Eclipse STS에 OpenJDK, Maven 구성 및 Project Import가 된 상태로 배포되기 때문에 STS에 추가적으로 설정할 부분은 없습니다. C: 드라이브에 압축 해제합니다.
+1. Windows 사용자의 경우는 Eclipse STS에 OpenJDK, Maven 구성 및 프로젝트 임포트 된 구성으로 배포했기 때문에 STS에 추가적으로 설정할 부분은 없습니다. C: 드라이브에 압축 해제합니다.
     ```
     c:\oracle_dev_meetup0615_windows\apache-maven-3.6.1
     c:\oracle_dev_meetup0615_windows\consul-1.5.1
