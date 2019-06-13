@@ -75,7 +75,6 @@ Windows Command Line에서 아래와 같이 실행합니다.
     .bash_profile에 다음 내용을 추가합니다. 아래 경로는 예시입니다. 압축 해제한 경로로 변경하여야 합니다.
     ```
     export JAVA_HOME=/Users/DonghuKim/oracle_dev_meetup0615_macos/jdk-12/Contents/Home
-
     export MAVEN_HOME=/Users/DonghuKim/oracle_dev_meetup0615_macos/apache-maven-3.6.1
 
     PATH=${PATH}:$JAVA_HOME/bin:$MAVEN_HOME/bin
