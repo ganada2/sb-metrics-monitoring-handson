@@ -1,12 +1,12 @@
 # 실습3: Microservice Monitoring with Service Discovery (Consul) and Prometheus, Grafana
 
-[2019.06.15] Oracle Developer Meetup Hands-On 문서
+[2019.06.15] Oracle Developer Meetup Spring Boot Microservice Metrics Hands-On Guide
 
 ***
 
 ### 실습 목표
 
-Spring Boot 마이크로 서비스를 Service Discovery (Consul)와 Prometheus, Grafana를 사용하여 Metrics 모니터링
+3개의 Spring Boot 기반 마이크로서비스로 구성된 어플리케이션(Love Calculator)에 대한 매트릭스 정보 모니터링 환경을 위해 다양한 오픈소스 소프트웨어를 활용해서 직접 구축해 봅니다. 세 번째는 Service Discovery솔루션인 Hashicorp사의 Consul과 Prometheus+Grafana 조합을 통해 환경을 구성해 봅니다.
 
 ***
 

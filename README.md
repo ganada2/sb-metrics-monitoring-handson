@@ -1,12 +1,12 @@
 # Spring-Boot: Microservice Metrics Monitoring Hands-On
 
-[2019.06.15] Oracle Developer Meetup Hands-On 문서
+[2019.06.15] Oracle Developer Meetup Spring Boot Microservice Metrics Hands-On Guide
 
 ***
 
 ### 실습 목표
 
-Spring Boot 마이크로 서비스에 대한 Metrics 모니터링 실습
+3개의 Spring Boot 기반 마이크로서비스로 구성된 어플리케이션(Love Calculator)에 대한 매트릭스 정보 모니터링 환경을 위해 다양한 오픈소스 소프트웨어를 활용해서 직접 구축해 봅니다.
 
 ### 실습을 위해 필요한 소프트웨어
 * [Spring Tools 4 for Eclipse](https://spring.io/tools)
@@ -23,7 +23,7 @@ Spring Boot 마이크로 서비스에 대한 Metrics 모니터링 실습
 
 ### 설치 및 환경 구성
 #### Windows
-1. Windows 사용자의 경우는 Eclipse STS에 OpenJDK, Maven 구성 및 프로젝트 임포트 된 구성으로 배포했기 때문에 STS에 추가적으로 설정할 부분은 없습니다. C: 드라이브에 압축 해제합니다.
+1. Windows 사용자의 경우는 Eclipse STS에 OpenJDK, Maven 구성 및 프로젝트 임포트 된 구성으로 배포했기 때문에 STS에 추가적으로 설정할 부분은 없습니다. C: 드라이브에 다음과 같이 압축 해제합니다.
     ```
     c:\oracle_dev_meetup0615_windows\apache-maven-3.6.1
     c:\oracle_dev_meetup0615_windows\consul-1.5.1
@@ -40,23 +40,23 @@ Windows Command Line에서 아래와 같이 실행합니다.
     setx path "%PATH%;c:\oracle_dev_meetup0615_windows\jdk-12\bin;c:\oracle_dev_meetup0615_windows\apache-maven-3.6.1\bin;c:\oracle_dev_meetup0615_windows\consul-1.5.1;c:\oracle_dev_meetup0615_windows\grafana-6.2.2\bin;c:\oracle_dev_meetup0615_windows\prometheus-2.10.0"
     ```
 
-3. sts-4.2.2.RELEASE\SpringToolSuite4.exe파일을 더블클릭해서 Eclipse STS를 실행합니다.   좌측 Project Explorer에 정상적으로 6개의 Spring Boot Project가 오류없이 보이는지 확인합니다.
+3. sts-4.2.2.RELEASE\SpringToolSuite4.exe파일을 더블클릭해서 Eclipse STS를 실행합니다.  
+좌측 Project Explorer에 정상적으로 6개의 Spring Boot Project가 오류없이 보이는지 확인합니다.
+    * Love Calculator라는 어플리케이션을 구성하는 서비스와 UI
+        * love-calculator-service (Spring Boot Project)
+        * love-calculator-consumer (Spring Boot Project)
+        * yes-or-no-consumer (Spring Boot Project)
+        * love-calculator-web (Static Web, HTML)
+
+    * Spring Boot Admin Server (Monitoring Server)
+        * spring-admin-server (Spring Boot Project)
+
+    * Eureka Discovery Server (Service Discovery Server)
+        * eureka-discovery-server (Spring Boot Project)
 
     ![](images/sts-import-complete.png)
 
-각 프로젝트에 대해서 간략히 설명하면:
 
-* Love Calculator라는 어플리케이션을 구성하는 서비스와 UI
-    * love-calculator-service (Spring Boot Project)
-    * love-calculator-consumer (Spring Boot Project)
-    * yes-or-no-consumer (Spring Boot Project)
-    * love-calculator-web (Static Web, HTML)
-
-* Spring Boot Admin Server (모니터링 서버)
-    * spring-admin-server (Spring Boot Project)
-
-* Eureka Discovery Server ()
-    * eureka-discovery-server (Spring Boot Project)
 
 > 모니터링 서버인 Spring Boot Admin과 서비스 디스커버리 역할을 하는 Eureka Server는 모두 Spring Boot 기반으로 생성됩니다. 실습 과정에서 제공되는 프로젝트를 그대로 활용하거나, 직접 만들어 볼수도 있습니다.
 

@@ -1,16 +1,19 @@
 # 실습1: Microservice Monitoring with Spring Boot Admin
 
-[2019.06.15] Oracle Developer Meetup Hands-On 문서
+[2019.06.15] Oracle Developer Meetup Spring Boot Microservice Metrics Hands-On Guide
 
 ***
 
 ### 실습 목표
 
-Spring Boot 마이크로 서비스를 Spring Boot Admin을 사용하여 Metrics 모니터링
+3개의 Spring Boot 기반 마이크로서비스로 구성된 어플리케이션(Love Calculator)에 대한 매트릭스 정보 모니터링 환경을 위해 다양한 오픈소스 소프트웨어를 활용해서 직접 구축해 봅니다. 첫 번째로 Codecentric AG에서 개발한 Spring Boot 전용 매트릭스 모니터링 오픈소스 솔루션인 Spring Boot Admin을 통해 모니터링 환경을 구성을 목표로 합니다.
 
 ***
 
-### Spring Admin Server (Spring Boot 프로젝트) 생성 및 구성
+### Spring Boot Admin
+Codecentric AG라는 회사에서 시작한 오픈소스 커뮤니티 프로젝트로 Spring Boot Actuator의 Endpoints의 정보를 가져와서 모니터링할 수 있는 Spring Boot Actuator Monitoring UI 프레임워크입니다.
+
+### Spring Boot Admin Server (Spring Boot 프로젝트) 생성 및 구성
 제공된 Eclipse Spring Tool Suite(이하 STS) 프로젝트중에서 spring-admin-server가 Spring Boot Admin (모니터링 서버) 역할을 합니다. 
 
 제공되는 프로젝트를 활용해도 되지만, 새로 만들어볼 수 있습니다. 새로 프로젝트를 생성해서 Spring Boot Admin을 구성할 경우 아래 **Spring Boot Admin 서버 만들기**을 클릭해서 가이드데로 진행합니다.
