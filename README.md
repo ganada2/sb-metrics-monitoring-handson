@@ -110,14 +110,16 @@ Windows Command Line에서 아래와 같이 실행합니다.
 
     ![](images/sts-maven.png)
 
-7. 예제 Spring Boot 프로젝트를 임포트합니다. File > Import 클릭 후 General > Existing  Projects into Workspace를 선택합니다.
-    ![](images/sts-import-projects.png)
-    sts_workspace 폴더내의 eureka-discovery-server 프로젝트를 포함해서 총 6개의 프로젝트(eureka-discovery-server, love-calculator-consumer, love-calculator-web, spring-admin-server, yes-or-no-consumer)를 임포트 합니다.
+7. 예제 Spring Boot 프로젝트를 임포트합니다. File > Import 클릭 후 General > Existing  Projects into Workspace를 선택합니다.  
+    ![](images/sts-import-projects.png)  
+
+    sts_workspace 폴더내의 eureka-discovery-server 프로젝트를 포함해서 총 6개의 프로젝트(eureka-discovery-server, love-calculator-consumer, love-calculator-web, spring-admin-server, yes-or-no-consumer)를 임포트 합니다.  
     ![](images/sts-import-project.png)
-    Import를 하게 되면 Build와 함께 Dependency 라이브러리를 Maven Local Repository에 저장합니다. 빌드가 성공하면 아래와 같이 오류 없이 정상적으로 임포트가 완료됩니다.
+
+    Import를 하게 되면 Build와 함께 Dependency 라이브러리를 Maven Local Repository에 저장합니다. 빌드가 성공하면 아래와 같이 오류 없이 정상적으로 임포트가 완료됩니다.  
     ![](images/sts-import-complete.png)
 
-> 편의상 oracle_dev_meetup0615_windows 폴더와 oracle_dev_meetup0615_macos 폴더를 **{ROOT}**로 부르겠습니다.
+> 편의상 oracle_dev_meetup0615_windows 폴더와 oracle_dev_meetup0615_macos 폴더를 {ROOT}로 표기하겠습니다.
 
 ### 실습을 위한 마이크로서비스
 
