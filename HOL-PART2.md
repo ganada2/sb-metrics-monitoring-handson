@@ -89,7 +89,7 @@ spring-admin-server와 마찬가지로 제공되는 프로젝트를 활용해도
 
 4. STS에서 Spring Boot Application 파일(eureka-discovery-server-2/src/main/java/com/example/demo/EurekaDiscoveryServer2Application.java)을 열고 다음과 같이 @EnableEurekaServer 을 추가합니다.
 
-    > STS에서 자동 Package Import 단축키는 ***'Ctrl + Shift + o'***입니다. Annotation을 추가하고 위 단축키를 눌러서 관련 패키지를 임포트 합니다.
+    > STS에서 자동 Package Import 단축키는 ***'Ctrl + Shift + o'*** 입니다. Annotation을 추가하고 위 단축키를 눌러서 관련 패키지를 임포트 합니다.
 
     ```java
     @SpringBootApplication
@@ -159,7 +159,9 @@ spring-admin-server와 마찬가지로 제공되는 프로젝트를 활용해도
     </dependency>
     ```
 
-2. STS에서 Spring Boot Application 파일(spring-admin-server/src/main/java/com/example/demo/SpringAdminServerApplication.java)을 열고 다음과 같이 @EnableDiscoveryClient 을 추가합니다.
+2. STS에서 Spring Boot Application 파일(spring-admin-server/src/main/java/com/example/demo/SpringAdminServerApplication.java)을 열고 다음과 같이 @EnableDiscoveryClient 을 추가합니다. 추가한 후 관련 패키지 임포트를 위해서 ***'Ctrl + Shift + o'*** 를 클릭합니다.
+
+    > STS에서 자동 Package Import 단축키는 ***'Ctrl + Shift + o'*** 입니다. Annotation을 추가하고 위 단축키를 눌러서 관련 패키지를 임포트 합니다.
 
     ```
     @SpringBootApplication

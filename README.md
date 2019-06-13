@@ -72,7 +72,7 @@ Windows Command Line에서 아래와 같이 실행합니다.
     $ vi ~/.bash_profile
     ```
 
-    .bash_profile에 다음 내용을 추가합니다.
+    .bash_profile에 다음 내용을 추가합니다. 아래 경로는 예시입니다. 압축 해제한 경로로 변경하여야 합니다.
     ```
     export JAVA_HOME=/Users/DonghuKim/oracle_dev_meetup0615_macos/jdk-12/Contents/Home
 
@@ -88,7 +88,7 @@ Windows Command Line에서 아래와 같이 실행합니다.
     export PATH
     ```
 
-3. $MAVEN_HOME/conf/settings.xml 파일을 열어서 Local Maven Repository를 다음과 같이 지정합니다. 아래 경로는 예시입니다.
+3. $MAVEN_HOME/conf/settings.xml 파일을 열어서 Local Maven Repository를 다음과 같이 지정합니다. 아래 경로는 예시이며, 압축 해제한 위치로 변경합니다.
     ```xml
     <localRepository>/Users/DonghuKim/oracle_dev_meetup0615_macos/apache-maven-3.6.1/repository</localRepository>
     ```
@@ -96,7 +96,7 @@ Windows Command Line에서 아래와 같이 실행합니다.
 4. Launchpad 에서 STS를 실행합니다. workspace는 압축 해제한 폴더의 sts_workspace를 선택합니다.
     ![](images/sts-workspace.png)
 
-5. Eclipse STS의 Preferences를 열어서 Java > Installed JREs 선택 후 다음과 같이 입력하고 finish 버튼을 클릭 후, 설정한 JRE 체크 후 Apply and Close 버튼을 클릭합니다.
+5. Eclipse STS의 Preferences를 열어서 Java > Installed JREs 선택 후 다음과 같이 입력하고 finish 버튼을 클릭 후, 설정한 JRE 체크 후 Apply and Close 버튼을 클릭합니다. 아래 경로는 예시이며, 압축 해제한 위치로 변경합니다.
 * JRE home
     * /Users/DonghuKim/oracle_dev_meetup0615_macos/jdk-12/Contents/Home
 * JRE name
