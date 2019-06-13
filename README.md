@@ -37,7 +37,7 @@
 2. OpenJDK, Maven, Prometheus, Grafana, Consul의 Path 설정을 합니다.  
 Windows Command Line에서 아래와 같이 실행합니다.
     ```
-    setx path "%PATH%;c:\oracle_dev_meetup0615_windows\jdk-12\bin;c:\oracle_dev_meetup0615_windows\apache-maven-3.6.1\bin;c:\oracle_dev_meetup0615_windows\consul-1.5.1;c:\oracle_dev_meetup0615_windows\grafana-6.2.2\bin;c:\oracle_dev_meetup0615_windows\prometheus-2.10.0"
+    setx path "%PATH%;c:\oracle_dev_meetup0615_windows\jdk-12\bin;c:\oracle_dev_meetup0615_windows\apache-maven-3.6.1\bin;
     ```
 
 3. sts-4.2.2.RELEASE\SpringToolSuite4.exe파일을 더블클릭해서 Eclipse STS를 실행합니다.  
@@ -78,13 +78,7 @@ Windows Command Line에서 아래와 같이 실행합니다.
 
     export MAVEN_HOME=/Users/DonghuKim/oracle_dev_meetup0615_macos/apache-maven-3.6.1
 
-    export GRAFANA_HOME=/Users/DonghuKim/oracle_dev_meetup0615_macos/grafana-6.2.2
-
-    export PROMETHEUS_HOME=/Users/DonghuKim/oracle_dev_meetup0615_macos/prometheus-2.10.0
-
-    export CONSUL_HOME=/Users/DonghuKim/oracle_dev_meetup0615_macos/consul-1.5.1
-
-    PATH=${PATH}:$JAVA_HOME/bin:$MAVEN_HOME/bin:$GRAFANA_HOME/bin:$PROMETHEUS_HOME:$CONSUL_HOME
+    PATH=${PATH}:$JAVA_HOME/bin:$MAVEN_HOME/bin
     export PATH
     ```
 
