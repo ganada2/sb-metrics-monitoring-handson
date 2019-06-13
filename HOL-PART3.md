@@ -265,7 +265,7 @@ Prometheus는 각 서비스들로 부터 가져온 Metrics 데이터를 시계�
     <img src="images/grafana-import-dashboard.png" width="100%">
 
 ### Grafana Micrometer Dashboard with Spring Boot Microservices
-최종 모습입니다.
+Spring Boot과 Consul, Prometheus와 Grafana를 조합한 최종 대시보드 입니다.
 
 <img src="images/grafana-final-change-5min.png" width="100%">
 

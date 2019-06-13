@@ -128,21 +128,20 @@ spring-admin-server와 마찬가지로 제공되는 프로젝트를 활용해도
 7. Browser에서 http://localhost:8761으로 Eureka Server Console에 접속합니다.  
     <img src="images/eureka-admin-console.png" width="100%">
 
-    > 서버 종료는 ***Ctrl + c***로 종료합니다.
+    > 서버 종료는 ***Ctrl + c*** 로 종료합니다.
 </div>
 </summary>
 </details>
 
 ### Spring Admin Server 구성
-첫 번째 실습에서는 모든 서비스들을 직접 Spring Admin Server에 등록해 연결했습니다. 이번 실습은 모든 서비스들이 Eureka Discovery Server의 Registry에 등록이 되고, Spring Boot Admin이 Eureka를 통해서 서비스들에 대한 Metrics 정보를 얻습니다.
+첫 번째 실습에서는 모든 서비스들을 직접 Spring Admin Server에 등록해 연결했습니다. 이번 실습은 모든 서비스들이 Eureka Discovery Server의 Registry에 등록이 되고, Spring Boot Admin이 Eureka를 통해서 서비스들에 대한 Metrics 정보를 얻습니다.  
+따라서 Spring Boot 서비스(Love Calculator)와 Spring Boot Admin을 Eureka Client로 등록해서 연결해줘야 합니다.
 
 * **실습 1**
     * Love Calculator 서비스 -> Spring Boot Admin (모니터링 서버)
 
 * **실습 2**
     * Love Calculator 서비스 -> Eureka (Discovery 서버) <- Spring Boot Admin (모니터링 서버)
-
-따라서 Spring Boot 서비스(Love Calculator)와 Spring Boot Admin을 Eureka Client로 등록해서 연결해줘야 합니다.
 
 > 직접 만들고 구성한 Spring Boot Admin과 Eureka 서버를 사용할 경우에는 작업을 해당 프로젝트에서 작업하여야 합니다.
 
@@ -231,7 +230,7 @@ Spring Boot Admin이 아닌 Eureka Server와 연결되도록 설정을 변경합
 
 2. STS에서 Spring Boot Application 파일(love-calculator-service/src/main/java/com/example/demo.LoveCalculatorServiceApplication.java)을 열고 다음과 같이 @EnableDiscoveryClient 어노테이션을 추가합니다.
 
-어노테이션을 추가하고 ***'Ctrl + Shift + o'***을 눌러서 관련 패키지를 임포트합니다.
+    어노테이션을 추가하고 ***'Ctrl + Shift + o'*** 을 눌러서 관련 패키지를 임포트합니다.
 
     ```java
     @SpringBootApplication

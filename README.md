@@ -174,7 +174,7 @@ Love Calculator와 Yes or No라는 Open API를 각각 호출하는 두개의 Spr
     $ ./stop-all-svc.sh
     ```
 
-이제 실습을 위한 기본 준비가 끝났습니다. 총 4개의 MSA 모니터링 환경 구성 시나리오를 가지고 진행합니다. 아래 링크를 클릭해서 각 실습 페이지로 이동해서 실습을 진행합니다.
+이제 실습을 위한 기본 준비가 끝났습니다. 총 43개의 Spring Boot 서비스 모니터링 환경 구성 시나리오를 가지고 진행합니다. 아래 링크를 클릭해서 각 실습 페이지로 이동해서 실습을 진행합니다.
 
 - [실습1: Microservice Monitoring with Spring Boot Admin](HOL-PART1.md)
 
