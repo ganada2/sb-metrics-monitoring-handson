@@ -21,6 +21,11 @@
 * macOS 사용자
     https://objectstorage.ap-seoul-1.oraclecloud.com/p/8LwxuQs9C_Gywv04nTw8OvUa_bEgTJ4n8wYa9Ees4s8/n/apackrsct01/b/bucket-20190614-1639/o/oracle_dev_meetup0615_macos.zip
 
+* 예제 소스의 HTML 파일 수정본 (약간의 레이아웃이 틀어진 것을 바로 잡은 파일입니다. 실습하는데 문제되지 않지만, 변경을 원한다면 love-calculator-web/WebContent 폴더의 index.html 파일을 아래 파일로 덮어쓰기 해주면 됩니다.)
+    https://objectstorage.ap-seoul-1.oraclecloud.com/p/S2GrYg6Bxr2ZHDG-WWFWA4bYq_3dA2CKTL7G9GUWu2w/n/apackrsct01/b/bucket-20190614-1639/o/index.html
+
+
+
 ### 설치 및 환경 구성
 #### Windows
 1. Windows 사용자의 경우는 Eclipse STS에 OpenJDK, Maven 구성 및 프로젝트 임포트 된 구성으로 배포했기 때문에 STS에 추가적으로 설정할 부분은 없습니다. C: 드라이브에 다음과 같이 압축 해제합니다.
