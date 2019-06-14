@@ -17,9 +17,9 @@
 
 ### 전체 프로그램 및 예제 소스 다운로드
 * Windows 사용자
-    http://~~~~~~~~~~~~~~~~~
+    https://objectstorage.ap-seoul-1.oraclecloud.com/p/h6lUWYH0x8XEmgCRTzhsjThYNE34dPQ-nRzrIGL20fw/n/apackrsct01/b/bucket-20190614-1639/o/oracle_dev_meetup0615_windows.zip
 * macOS 사용자
-    http://~~~~~~~~~~~~~~~~~
+    https://objectstorage.ap-seoul-1.oraclecloud.com/p/8LwxuQs9C_Gywv04nTw8OvUa_bEgTJ4n8wYa9Ees4s8/n/apackrsct01/b/bucket-20190614-1639/o/oracle_dev_meetup0615_macos.zip
 
 ### 설치 및 환경 구성
 #### Windows
@@ -55,8 +55,6 @@ Windows Command Line에서 아래와 같이 실행합니다.
         * eureka-discovery-server (Spring Boot Project)
 
     ![](images/sts-import-complete.png)
-
-
 
 > 모니터링 서버인 Spring Boot Admin과 서비스 디스커버리 역할을 하는 Eureka Server는 모두 Spring Boot 기반으로 생성됩니다. 실습 과정에서 제공되는 프로젝트를 그대로 활용하거나, 직접 만들어 볼수도 있습니다.
 
@@ -167,7 +165,7 @@ Love Calculator와 Yes or No라는 Open API를 각각 호출하는 두개의 Spr
     $ ./stop-all-svc.sh
     ```
 
-이제 실습을 위한 기본 준비가 끝났습니다. 총 43개의 Spring Boot 서비스 모니터링 환경 구성 시나리오를 가지고 진행합니다. 아래 링크를 클릭해서 각 실습 페이지로 이동해서 실습을 진행합니다.
+이제 실습을 위한 기본 준비가 끝났습니다. 총 3개의 Spring Boot 서비스 모니터링 환경 구성 시나리오를 가지고 진행합니다. 아래 링크를 클릭해서 각 실습 페이지로 이동해서 실습을 진행합니다.
 
 - [실습1: Microservice Monitoring with Spring Boot Admin](HOL-PART1.md)
 
