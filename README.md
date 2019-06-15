@@ -16,12 +16,12 @@
 * [Grafana 6.2.2](https://grafana.com/grafana/download)
 
 ### 전체 프로그램 및 예제 소스 다운로드
-* Windows 사용자
+* Windows 사용자  
     https://objectstorage.ap-seoul-1.oraclecloud.com/p/h6lUWYH0x8XEmgCRTzhsjThYNE34dPQ-nRzrIGL20fw/n/apackrsct01/b/bucket-20190614-1639/o/oracle_dev_meetup0615_windows.zip
-* macOS 사용자
+* macOS 사용자  
     https://objectstorage.ap-seoul-1.oraclecloud.com/p/8LwxuQs9C_Gywv04nTw8OvUa_bEgTJ4n8wYa9Ees4s8/n/apackrsct01/b/bucket-20190614-1639/o/oracle_dev_meetup0615_macos.zip
 
-* 예제 소스의 HTML 파일 수정본 (약간의 레이아웃이 틀어진 것을 바로 잡은 파일입니다. 실습하는데 문제되지 않지만, 변경을 원한다면 love-calculator-web/WebContent 폴더의 index.html 파일을 아래 파일로 덮어쓰기 해주면 됩니다.)
+* 예제 소스의 HTML 파일 수정본 (약간의 레이아웃이 틀어진 것을 바로 잡은 파일입니다. 실습하는데 문제되지 않지만, 변경을 원한다면 love-calculator-web/WebContent 폴더의 index.html 파일을 아래 파일로 덮어쓰기 해주면 됩니다.)  
     https://objectstorage.ap-seoul-1.oraclecloud.com/p/S2GrYg6Bxr2ZHDG-WWFWA4bYq_3dA2CKTL7G9GUWu2w/n/apackrsct01/b/bucket-20190614-1639/o/index.html
 
 
