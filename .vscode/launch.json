@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GlobalidApplication<globalid>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.kakao.globalid.GlobalidApplication",
+            "projectName": "globalid",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
